@@ -40,6 +40,7 @@ params = {
     'learning_rate_mu'  : 0.001,
     'tau'               : 0.01,             # constant for soft update
     'gamma'             : 0.99,
+    'lambda'            : 0.01,             # merge Q1 and Q2, mu1 and mu2
     'device'            : device
     }
 agents = defaultdict(lambda : agent.agent(params))
@@ -91,15 +92,15 @@ for ep in range(M):
             for i in range(params['nb_agents']):
                 agents[str(i)].soft_update()
             
-            # not stable if temp = 0.5 or 0.1
-            temp = 0.01
-            # if cooperation, average Q and mu
+            # not stable if too big
+            # not necessary but if cooperation, average Q and mu. Stabilize convergence
             for target_param, local_param in zip(agents[str(0)].Q.parameters(), agents[str(1)].Q.parameters()):
-                target_param.data.copy_(temp*local_param.data + (1.0-temp)*target_param.data)
-                local_param.data.copy_((1.0-temp)*local_param.data + temp*target_param.data)
+                target_param.data.copy_(params['lambda']*local_param.data + (1.0-params['lambda'])*target_param.data)
+                local_param.data.copy_((1.0-params['lambda'])*local_param.data + params['lambda']*target_param.data)
+                
             for target_param, local_param in zip(agents[str(0)].mu.parameters(), agents[str(1)].mu.parameters()):
-                target_param.data.copy_(temp*local_param.data + (1.0-temp)*target_param.data)
-                local_param.data.copy_((1.0-temp)*local_param.data +temp*target_param.data)
+                target_param.data.copy_(params['lambda']*local_param.data + (1.0-params['lambda'])*target_param.data)
+                local_param.data.copy_((1.0-params['lambda'])*local_param.data + params['lambda']*target_param.data)
             
         state = next_state
 
