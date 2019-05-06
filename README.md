@@ -40,25 +40,21 @@ Run the `MADDPG.py` file to train the agents. During training, the code outputs 
 - `agent.py` contains a class describing DDPG agents with centralized training and decentralized execution.
 - `utils.py` contains the replay buffer class to store and sample transitions.
   
-The agents should be able to solve the environment in approximatively 700-900 episodes (high variance is expected).
+The agents should be able to solve the environment in approximatively 600-900 episodes (high variance is expected).
 
 ```dos
-50/1000         average: 0.0225 sigma: 1.30      max: 0.20
-100/1000        average: 0.0144 sigma: 1.14      max: 0.20
-150/1000        average: 0.0058 sigma: 1.00      max: 0.10
-200/1000        average: 0.0125 sigma: 0.87      max: 0.10
-250/1000        average: 0.0262 sigma: 0.76      max: 0.20
-300/1000        average: 0.0383 sigma: 0.66      max: 0.20
-350/1000        average: 0.0421 sigma: 0.58      max: 0.20
-400/1000        average: 0.0497 sigma: 0.51      max: 0.20
-450/1000        average: 0.0527 sigma: 0.44      max: 0.20
-500/1000        average: 0.0554 sigma: 0.39      max: 0.20
-550/1000        average: 0.0645 sigma: 0.34      max: 0.20
-600/1000        average: 0.0793 sigma: 0.30      max: 0.20
-650/1000        average: 0.0955 sigma: 0.26      max: 0.30
-700/1000        average: 0.0999 sigma: 0.23      max: 0.30
-750/1000        average: 0.1073 sigma: 0.20      max: 0.70
-800/1000        average: 0.3488 sigma: 0.17      max: 2.70
-812/1000        average: 0.5177 sigma: 0.17
-solved in 812 episodes.
+50/1000         average: 0.0173 sigma: 1.30      max: 0.10
+100/1000        average: 0.0135 sigma: 1.14      max: 0.10
+150/1000        average: 0.0162 sigma: 1.00      max: 0.20
+200/1000        average: 0.0301 sigma: 0.87      max: 0.20
+250/1000        average: 0.0451 sigma: 0.76      max: 0.20
+300/1000        average: 0.0560 sigma: 0.66      max: 0.30
+350/1000        average: 0.0769 sigma: 0.58      max: 0.30
+400/1000        average: 0.0838 sigma: 0.51      max: 0.50
+450/1000        average: 0.0849 sigma: 0.44      max: 0.50
+500/1000        average: 0.1017 sigma: 0.39      max: 0.30
+550/1000        average: 0.1146 sigma: 0.34      max: 0.40
+600/1000        average: 0.1448 sigma: 0.30      max: 0.60
+639/1000        average: 0.5112 sigma: 0.27
+solved in 639 episodes.
 ```
