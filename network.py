@@ -13,10 +13,10 @@ class Q_estimator(nn.Module):
 
     def forward(self, state, action):
         x = self.fc1(state)
-        x = torch.tanh(x)
+        x = F.relu(x)
         x = torch.cat([x, action], dim=1)
         x = self.fc2(x)
-        x = torch.tanh(x)
+        x = F.relu(x)
         x = self.fc3(x)
 
         return x
@@ -29,9 +29,9 @@ class mu_estimator(nn.Module):
 
         self.mu =  nn.Sequential(
                                     nn.Linear(state_dim, fc1),
-                                    nn.Tanh(),
+                                    nn.ReLU(),
                                     nn.Linear(fc1, fc2),
-                                    nn.Tanh(),
+                                    nn.ReLU(),
                                     nn.Linear(fc2, action_dim),
                                     nn.Tanh()
                                     )
