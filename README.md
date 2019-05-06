@@ -57,3 +57,5 @@ The agents should be able to solve the environment in approximatively 600-900 ep
 598/1000        average: 0.5000 sigma: 0.30
 solved in 598 episodes.
 ```
+
+![Solved](Solved_598_episodes.png)
