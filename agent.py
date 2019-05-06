@@ -71,4 +71,5 @@ def learn(agents, i):
         loss = -agents[str(i)].Q(states, a).mean()
         agents[str(i)].optim_mu.zero_grad()
         loss.backward()
+        nn.utils.clip_grad_norm_(agents[str(i)].mu.parameters(), agents[str(i)].grad_clip)
         agents[str(i)].optim_mu.step()
