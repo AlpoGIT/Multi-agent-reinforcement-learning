@@ -43,18 +43,17 @@ Run the `MADDPG.py` file to train the agents. During training, the code outputs 
 The agents should be able to solve the environment in approximatively 600-900 episodes (high variance and some instability are expected).
 
 ```dos
-50/1000         average: 0.0173 sigma: 1.30      max: 0.10
-100/1000        average: 0.0135 sigma: 1.14      max: 0.10
-150/1000        average: 0.0162 sigma: 1.00      max: 0.20
-200/1000        average: 0.0301 sigma: 0.87      max: 0.20
-250/1000        average: 0.0451 sigma: 0.76      max: 0.20
-300/1000        average: 0.0560 sigma: 0.66      max: 0.30
-350/1000        average: 0.0769 sigma: 0.58      max: 0.30
-400/1000        average: 0.0838 sigma: 0.51      max: 0.50
-450/1000        average: 0.0849 sigma: 0.44      max: 0.50
-500/1000        average: 0.1017 sigma: 0.39      max: 0.30
-550/1000        average: 0.1146 sigma: 0.34      max: 0.40
-600/1000        average: 0.1448 sigma: 0.30      max: 0.60
-639/1000        average: 0.5112 sigma: 0.27
-solved in 639 episodes.
+50/1000         average: 0.0265 sigma: 1.30      max: 0.20
+100/1000        average: 0.0154 sigma: 1.14      max: 0.20
+150/1000        average: 0.0057 sigma: 1.00      max: 0.10
+200/1000        average: 0.0164 sigma: 0.87      max: 0.10
+250/1000        average: 0.0309 sigma: 0.76      max: 0.10
+300/1000        average: 0.0506 sigma: 0.66      max: 0.30
+350/1000        average: 0.0574 sigma: 0.58      max: 0.30
+400/1000        average: 0.0641 sigma: 0.51      max: 0.20
+450/1000        average: 0.0824 sigma: 0.44      max: 0.20
+500/1000        average: 0.0933 sigma: 0.39      max: 0.20
+550/1000        average: 0.1210 sigma: 0.34      max: 0.40
+598/1000        average: 0.5000 sigma: 0.30
+solved in 598 episodes.
 ```
