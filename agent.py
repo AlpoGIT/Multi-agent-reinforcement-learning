@@ -1,6 +1,6 @@
 import utils
 import network
-import torch
+import torch, torch.nn as nn
 import copy
 
 class agent:
