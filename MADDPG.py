@@ -41,7 +41,7 @@ params = {
     'tau'               : 0.01,             # constant for soft update
     'gamma'             : 0.99,
     'lambda'            : 0.01,             # merge Q1 and Q2, mu1 and mu2
-    'grad_clip'         : 0.7,              # gradient clip for mu
+    'grad_clip'         : 1.0,              # gradient clip for mu
     'device'            : device
     }
 agents = defaultdict(lambda : agent.agent(params))
