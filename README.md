@@ -40,7 +40,7 @@ Run the `MADDPG.py` file to train the agents. During training, the code outputs 
 - `agent.py` contains a class describing DDPG agents with centralized training and decentralized execution.
 - `utils.py` contains the replay buffer class to store and sample transitions.
   
-The agents should be able to solve the environment in approximatively 600-900 episodes (high variance is expected).
+The agents should be able to solve the environment in approximatively 600-900 episodes (high variance and some instability are expected).
 
 ```dos
 50/1000         average: 0.0173 sigma: 1.30      max: 0.10
