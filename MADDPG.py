@@ -41,6 +41,7 @@ params = {
     'tau'               : 0.01,             # constant for soft update
     'gamma'             : 0.99,
     'lambda'            : 0.01,             # merge Q1 and Q2, mu1 and mu2
+    'grad_clip'         : 0.7,              # gradient clip for mu
     'device'            : device
     }
 agents = defaultdict(lambda : agent.agent(params))
@@ -92,7 +93,7 @@ for ep in range(M):
             for i in range(params['nb_agents']):
                 agents[str(i)].soft_update()
             
-            # not stable if too big
+            # not stable if params['lambda'] too big
             # not necessary but if cooperation, average Q and mu. Stabilize convergence
             for target_param, local_param in zip(agents[str(0)].Q.parameters(), agents[str(1)].Q.parameters()):
                 target_param.data.copy_(params['lambda']*local_param.data + (1.0-params['lambda'])*target_param.data)
